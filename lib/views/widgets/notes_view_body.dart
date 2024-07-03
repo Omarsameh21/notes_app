@@ -9,9 +9,8 @@ class NotesViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 50),
+      padding: EdgeInsets.only(right: 14, left: 14, top: 50, bottom: 10),
       child: Column(
-        //  scrollDirection: Axis.vertical,
         children: [
           CostumAppBar(),
           Expanded(
@@ -29,6 +28,7 @@ class NotesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        physics: const BouncingScrollPhysics(),
         itemCount: 5,
         itemBuilder: (context, index) {
           return const NoteItem();
