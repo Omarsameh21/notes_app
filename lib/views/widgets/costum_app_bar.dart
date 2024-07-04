@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/views/widgets/costum_search_icon.dart';
+import 'package:notes_app/views/widgets/costum_icon.dart';
 
 class CostumAppBar extends StatelessWidget {
-  const CostumAppBar({super.key});
-
+  const CostumAppBar({super.key, required this.text});
+  final String text;
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return  Row(
       children: [
         Text(
-          'NOTES',
+          text,
           style: TextStyle(fontSize: 28),
         ),
-        Spacer(
+       const Spacer(
           flex: 1,
         ),
-        CostumSearchIcon()
+       const CostumIcon(icon: Icon(Icons.search),)
       ],
     );
   }
