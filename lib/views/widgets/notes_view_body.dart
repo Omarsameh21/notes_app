@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:notes_app/views/notes_item.dart';
 import 'package:notes_app/views/widgets/costum_app_bar.dart';
 
@@ -13,7 +12,7 @@ class NotesViewBody extends StatelessWidget {
       child: Column(
         children: [
           CostumAppBar(
-            text: 'Notes',
+            text: 'Notes', icon: Icon(Icons.search),
           ),
           Expanded(
             child: NotesListView(),
