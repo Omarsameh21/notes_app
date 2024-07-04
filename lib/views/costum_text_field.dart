@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
 class CostumTextField extends StatelessWidget {
-  const CostumTextField({super.key, required this.hintText, this.maxLines= 1});
+  const CostumTextField({super.key, required this.hintText, this.Vert = 20.0});
   final String hintText;
-  final int maxLines;
+  final double Vert;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,6 +12,8 @@ class CostumTextField extends StatelessWidget {
       child: TextField(
         cursorColor: KPrimaryColor,
         decoration: InputDecoration(
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 10, vertical: Vert),
             border: buildBorder(),
             focusedBorder: buildBorder(KPrimaryColor),
             hintText: hintText,
