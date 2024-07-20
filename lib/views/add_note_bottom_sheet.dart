@@ -9,23 +9,21 @@ class AddNote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: BlocConsumer<AddNoteCubit, AddNoteState>(
-        listener: (context, state) {
-          if (state is AddNoteFaliure) {
-            print('FAILED  ${state.errMassage}');
-          }
-          if (state is AddNoteSuccess) {
-            Navigator.pop(context);
-          }
-        },
-        builder: (context, state) {
-          return ModalProgressHUD(
-            inAsyncCall: state is AddNoteLoading ? true : false,
-            child: const AddNoteForm(),
-          );
-        },
-      ),
+    return BlocConsumer<AddNoteCubit, AddNoteState>(
+      listener: (context, state) {
+        if (state is AddNoteFaliure) {
+          print('FAILED  ${state.errMassage}');
+        }
+        if (state is AddNoteSuccess) {
+          Navigator.pop(context);
+        }
+      },
+      builder: (context, state) {
+        return ModalProgressHUD(
+          inAsyncCall: state is AddNoteLoading ? true : false,
+          child: const SingleChildScrollView(child: AddNoteForm()),
+        );
+      },
     );
   }
 }
