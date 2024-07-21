@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class CostumBotton extends StatelessWidget {
-  const CostumBotton({super.key, this.onTap});
+  const CostumBotton({super.key, this.onTap, this.isloadig = false});
   final Function()? onTap;
+  final bool isloadig;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,10 +20,18 @@ class CostumBotton extends StatelessWidget {
         child: Center(
           child: TextButton(
             onPressed: () {},
-            child: const Text(
-              'SAVE',
-              style: TextStyle(color: Colors.black, fontSize: 18),
-            ),
+            child: isloadig
+                ? const SizedBox(
+                    height: 25,
+                    width: 50,
+                    child: CircularProgressIndicator(
+                      color: Colors.black,
+                    ),
+                  )
+                : const Text(
+                    'SAVE',
+                    style: TextStyle(color: Colors.black, fontSize: 18),
+                  ),
           ),
         ),
       ),
