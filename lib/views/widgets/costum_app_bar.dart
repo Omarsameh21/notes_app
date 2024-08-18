@@ -11,7 +11,7 @@ class CostumAppBar extends StatelessWidget {
       children: [
         Text(
           text,
-          style: TextStyle(fontSize: 28),
+          style: const TextStyle(fontSize: 28),
         ),
         const Spacer(
           flex: 1,

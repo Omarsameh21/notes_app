@@ -19,7 +19,7 @@ class CostumBotton extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         child: Center(
           child: TextButton(
-            onPressed: () {},
+            onPressed: onTap,
             child: isloadig
                 ? const SizedBox(
                     height: 25,
