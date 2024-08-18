@@ -10,11 +10,11 @@ final class NotesCubitLoading extends NotesCubitState {}
 final class NotesCubitSuccess extends NotesCubitState {
   final List<NoteModel> notes;
 
-  NotesCubitSuccess(this.notes);
+  NotesCubitSuccess({required this.notes});
 }
 
 final class NotesCubitFalure extends NotesCubitState {
-  final String errMasage;
+  final String errMassage;
 
-  NotesCubitFalure(this.errMasage);
+  NotesCubitFalure({required this.errMassage});
 }
