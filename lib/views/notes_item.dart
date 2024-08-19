@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
+  const NoteItem({super.key, required this.note});
+
+  final NoteModel note;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,7 @@ class NoteItem extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) {
-              return  const EditNoteView();
+              return const EditNoteView();
             }),
           );
         },
@@ -27,18 +30,18 @@ class NoteItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title: const Text(
-                  'flutter notes',
-                  style: TextStyle(
+                title: Text(
+                  note.title,
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 26,
                   ),
                 ),
-                subtitle: const Padding(
-                  padding: EdgeInsets.only(top: 20, bottom: 16),
+                subtitle: Padding(
+                  padding: const EdgeInsets.only(top: 20, bottom: 16),
                   child: Text(
-                    'create your career with MR OMAR',
-                    style: TextStyle(
+                    note.content,
+                    style: const TextStyle(
                       color: Colors.black54,
                       fontSize: 18,
                     ),
@@ -53,11 +56,11 @@ class NoteItem extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 24),
+              Padding(
+                padding: const EdgeInsets.only(right: 24),
                 child: Text(
-                  'july 2, 2024 ',
-                  style: TextStyle(color: Colors.black54),
+                  note.date,
+                  style: const TextStyle(color: Colors.black54),
                 ),
               )
             ],
