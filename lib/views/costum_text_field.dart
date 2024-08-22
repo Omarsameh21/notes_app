@@ -3,10 +3,11 @@ import 'package:notes_app/constants.dart';
 
 class CostumTextField extends StatelessWidget {
   const CostumTextField(
-      {super.key, required this.hintText, this.Vert = 20.0, this.onSaved});
+      {super.key, required this.hintText, this.Vert = 20.0, this.onSaved, this.onChanged});
   final String hintText;
   final double Vert;
   final Function(String?)? onSaved;
+  final Function(String?)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,6 +21,7 @@ class CostumTextField extends StatelessWidget {
           }
         },
         onSaved: onSaved,
+        onChanged: onChanged,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
             contentPadding:
