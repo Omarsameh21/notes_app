@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class CostumBotton extends StatelessWidget {
-  const CostumBotton({super.key, this.onTap, this.isloadig = false});
+  const CostumBotton({super.key, this.onTap, this.isloadig = false, required this.text});
   final Function()? onTap;
   final bool isloadig;
+  final String text;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -28,8 +29,8 @@ class CostumBotton extends StatelessWidget {
                       color: Colors.black,
                     ),
                   )
-                : const Text(
-                    'SAVE',
+                :  Text(
+                     text,
                     style: TextStyle(color: Colors.black, fontSize: 18),
                   ),
           ),

@@ -54,6 +54,7 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
           ),
           const Spacer(),
           CostumBotton(
+            text: 'Save Edit',
             onTap: () {
               widget.note.title = title ?? widget.note.title;
               widget.note.content = content ?? widget.note.content;

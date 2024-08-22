@@ -5,6 +5,7 @@ import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/cubits/add_note_cubit/add_note_cubit.dart';
 import '../costum_botton.dart';
 import '../costum_text_field.dart';
+import 'colors_list_view.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
@@ -45,11 +46,16 @@ class _AddNoteFormState extends State<AddNoteForm> {
             },
           ),
           const SizedBox(
+            height: 20,
+          ),
+          const ColorsListView(),
+          const SizedBox(
             height: 32,
           ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CostumBotton(
+                text: 'Add Note',
                 isloadig: state is AddNoteLoading ? true : false,
                 onTap: () {
                   if (FormKey.currentState!.validate()) {
